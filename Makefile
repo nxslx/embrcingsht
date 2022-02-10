@@ -1,5 +1,5 @@
 # We only need to build our one source file
-OBJS = main.o
+OBJS = main.o nvm.o
 
 # We've got opencm3 in the folder with us
 OPENCM3_DIR := ./libopencm3
@@ -45,6 +45,7 @@ TGT_CFLAGS	+= $(ARCH_FLAGS)
 TGT_CFLAGS	+= -Wextra -Wshadow -Wimplicit-function-declaration
 TGT_CFLAGS	+= -Wredundant-decls -Wmissing-prototypes -Wstrict-prototypes
 TGT_CFLAGS	+= -fno-common -ffunction-sections -fdata-sections
+TGT_CFLAGS	+= -I. -I./include
 
 # C++ flags
 TGT_CXXFLAGS	+= $(OPT) $(CXXSTD) $(DEBUG)
